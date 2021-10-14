@@ -28,6 +28,7 @@
 #include <string.h>
 #include "core_mqtt_state.h"
 
+#pragma section const const_coreMqttState
 /*-----------------------------------------------------------*/
 
 /**
@@ -1112,3 +1113,4 @@ const char * MQTT_State_strerror( MQTTPublishState_t state )
 }
 
 /*-----------------------------------------------------------*/
+#pragma section

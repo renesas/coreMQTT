@@ -30,6 +30,7 @@
 #include "core_mqtt.h"
 #include "core_mqtt_state.h"
 
+#pragma section const const_coreMqtt
 /*-----------------------------------------------------------*/
 
 /**
@@ -2479,3 +2480,4 @@ const char * MQTT_Status_strerror( MQTTStatus_t status )
 }
 
 /*-----------------------------------------------------------*/
+#pragma section

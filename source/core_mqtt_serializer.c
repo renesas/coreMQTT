@@ -29,6 +29,8 @@
 
 #include "core_mqtt_serializer.h"
 
+#pragma section const const_coreMqttSerializer
+
 /**
  * @brief MQTT protocol version 3.1.1.
  */
@@ -128,7 +130,7 @@
  *
  * This value is greater than what is allowed by the MQTT specification.
  */
-#define MQTT_REMAINING_LENGTH_INVALID             ( ( size_t ) 268435456 )
+#define MQTT_REMAINING_LENGTH_INVALID             ( ( uint32_t ) 268435456 )
 
 /**
  * @brief The minimum remaining length for a QoS 0 PUBLISH.
@@ -708,7 +710,7 @@ static void serializePublishCommon( const MQTTPublishInfo_t * pPublishInfo,
 static size_t getRemainingLength( TransportRecv_t recvFunc,
                                   NetworkContext_t * pNetworkContext )
 {
-    size_t remainingLength = 0, multiplier = 1, bytesDecoded = 0, expectedSize = 0;
+    uint32_t remainingLength = 0, multiplier = 1, bytesDecoded = 0, expectedSize = 0;
     uint8_t encodedByte = 0;
     int32_t bytesReceived = 0;
 
@@ -2405,3 +2407,4 @@ MQTTStatus_t MQTT_GetIncomingPacketTypeAndLength( TransportRecv_t readFunc,
 }
 
 /*-----------------------------------------------------------*/
+#pragma section

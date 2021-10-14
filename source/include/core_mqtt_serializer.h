@@ -256,7 +256,7 @@ typedef struct MQTTPacketInfo
     /**
      * @brief Length of remaining serialized data.
      */
-    size_t remainingLength;
+    uint32_t remainingLength;
 } MQTTPacketInfo_t;
 
 /**
